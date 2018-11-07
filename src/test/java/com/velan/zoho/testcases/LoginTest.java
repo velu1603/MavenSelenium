@@ -22,7 +22,6 @@ public class LoginTest extends BaseTest {
 		
 		ExcelReader excel = new ExcelReader(Constants.SUITE1_XL_PATH);
 		DataUtil.checkExecution("master", "LoginTest", data.get("Runmode"), excel);
-		//DataUtil.checkExecution("master", "LoginTest", data.get("Runmode"), excel);
 		openBrowser(data.get("browser"));
 		loginfo("Launched browser"+data.get("browser"));
 
@@ -30,7 +29,7 @@ public class LoginTest extends BaseTest {
 		ZohoLogInPage login = home.goToLogin();
 		login.doLoginAsInvalidUser(data.get("username"), data.get("password"));
 		loginfo("username entered as "+(data.get("username")+" and password entered as " +  data.get("password")));
-		//Assert.fail("Failing the login test");
+		Assert.fail("Failing the login test");
 
 		
 
